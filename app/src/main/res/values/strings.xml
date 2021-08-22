@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My New Movie Info</string>
+
+    <string name="search_movie">Pesquisar por um filme…</string>
+    <string name="btn_search_movie">Pesquisar filme</string>
+    <string name="favorites">Favoritos</string>
+    <string name="all_movies">Todos os filmes</string>
+    <string name="movie_poster">Poster do filme (ALTERAR ver se tem descrição da img na API)</string>
+    <string name="value_not_found">Valor não encontrado</string>
+    <string name="star">Estrela decorativa</string>
+    <string name="user_avaliation">Avaliação dos usuários</string>
+    <string name="back">Voltar</string>
+    <string name="overview">Sinopse</string>
+    <string name="title_elenco">Elenco</string>
+    <string name="release_year">Ano de lançamento</string>
+    <string name="runtime">%1$sH:%2$smin</string>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MovieHomeActivity">
+
+    <ImageButton
+        android:id="@+id/ibSearchMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/background"
+        android:contentDescription="@string/btn_search_movie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+
+    <EditText
+        android:id="@+id/etSearchMovie"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:alpha="0.5"
+        android:autofillHints="no"
+        style="@style/textDefault"
+        android:hint="@string/search_movie"
+        android:inputType="text"
+        android:textColor="@color/default_text_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/ibSearchMovie"
+        app:layout_constraintTop_toTopOf="@+id/ibSearchMovie" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearchMovie">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlMovies"
+            android:layout_width="410dp"
+            android:layout_height="match_parent"
+            android:alpha="0.7"
+            android:backgroundTint="@color/background"
+            app:tabIndicator="@drawable/tab_indicator_movies"
+            app:tabIndicatorColor="@color/green_tab_indicator"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextAppearance="@style/textTitle" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpMovies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchorGravity="bottom" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchorGravity="bottom" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

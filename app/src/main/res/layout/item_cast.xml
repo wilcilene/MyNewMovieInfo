@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8sp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civCastPerson"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNameCast"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/value_not_found"
+            android:textAppearance="@style/textDefault"
+            app:layout_constraintEnd_toEndOf="@+id/civCastPerson"
+            app:layout_constraintStart_toStartOf="@+id/civCastPerson"
+            app:layout_constraintTop_toBottomOf="@+id/civCastPerson" />
+
+        <TextView
+            android:id="@+id/tvJobCast"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:gravity="center"
+            android:text="@string/value_not_found"
+            android:textAppearance="@style/textDefault"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameCast"
+            app:layout_constraintStart_toStartOf="@+id/tvNameCast"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameCast" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

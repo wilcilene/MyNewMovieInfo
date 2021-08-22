@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:Android="http://schemas.android.com/apk/res/android">
+
+    <item Android:id="@+id/tb_heart_favorite"
+        Android:drawable="@drawable/ic_heart_on_click" />
+
+</layer-list>
