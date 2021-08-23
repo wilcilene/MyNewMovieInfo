@@ -31,7 +31,7 @@ class MovieDetailViewModel : ViewModel()  {
             genres.add(newGenres)
         }
 
-        movieDetailApiResult?.credits?.forEach {
+        movieDetailApiResult?.credits?.cast?.forEach() {
             val newCast = Cast(
                 it.profile_path,
                 it.name,
@@ -39,6 +39,8 @@ class MovieDetailViewModel : ViewModel()  {
             )
             credits.add(newCast)
         }
+
+        Log.e("MovieDetailViewModel", credits[0].name.toString())
 
         val newMovieDetail = MovieDetail(
             movieDetailApiResult?.id,
@@ -49,9 +51,8 @@ class MovieDetailViewModel : ViewModel()  {
             movieDetailApiResult?.runtime,
             genres,
             movieDetailApiResult?.overview,
-            null
+            credits
         )
-
 
         movieDetail.postValue(newMovieDetail)
     }

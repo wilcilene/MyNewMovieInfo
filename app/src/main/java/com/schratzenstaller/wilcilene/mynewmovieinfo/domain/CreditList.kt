@@ -7,14 +7,14 @@ data class CreditList(
     val cast: List<Cast>?
 )
 data class Crew(
-    @SerializedName("profilePath")
+//    @SerializedName("profilePath")
     val profile_path: String?,
     val name: String?,
     val job: String?
 )
 
 class Cast(
-    @SerializedName("profilePath")
+//    @SerializedName("profilePath")
     val profile_path: String?,
     val name: String?,
     val character: String?

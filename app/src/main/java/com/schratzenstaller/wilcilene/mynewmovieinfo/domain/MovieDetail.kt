@@ -13,8 +13,8 @@ data class MovieDetail(
     private val runtime: Int?,
     val genres: List<Genre>?,
     val overview: String?,
-    val credits: List<CreditList>?
-//    val credits: List<Cast>?
+//    val credits: CreditList?
+    val credits: List<Cast>?
     )
 {
     val voteAverage = (vote_average?.times(10))?.let { it.roundToInt() }.toString() + "%"

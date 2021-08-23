@@ -26,7 +26,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
         detailViewModel.movieDetail.observe(this, Observer {
             loadMovieDetail(it)
-        })             //loadCastRecyclerView(it)
+        })
     }
 
     private fun loadMovieDetail(it: MovieDetail?) {
@@ -34,7 +34,7 @@ class MovieDetailActivity : AppCompatActivity() {
         //binding.tvVoteAverage.setText(it?.voteAverage)
         binding.tvMovieDetailTitle.setText(it?.title)
 
-        /*
+
         binding.rvMovieGenres.layoutManager = LinearLayoutManager(
             this,
             LinearLayoutManager.HORIZONTAL,
@@ -47,7 +47,7 @@ class MovieDetailActivity : AppCompatActivity() {
             LinearLayoutManager.HORIZONTAL,
             false)
         binding.rvCast.adapter = it?.let { it.credits?.let { cast -> MovieDetailCastAdapter(cast) } }
-*/
+
     }
 
 

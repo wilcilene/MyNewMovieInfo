@@ -28,8 +28,8 @@ data class MovieDetailApiResult(
     val runtime: Int?,
     val genres: List<GenreApiResult>?,
     val overview: String?,
-    val credits: List<CastApiResult>?
-//    val credits: List<CreditListApiResult>?
+//    val credits: CastApiResult?
+    val credits: CreditListApiResult?
 )
 data class GenreListApiResult(
     val genres: List<GenreApiResult>?
