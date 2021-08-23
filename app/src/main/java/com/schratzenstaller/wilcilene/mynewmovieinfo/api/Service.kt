@@ -27,4 +27,9 @@ interface Service {
                        @Query("append_to_response") append_to_response: String = "credits,release_dates"
     ): Call<MovieDetailApiResult>
 
+
+//    @GET("3/movie/{idMovie}")
+//    fun getMovieDetail(@Path("idMovie") idMovie: Int,
+//                       @Query("api_key") api_key: String,
+//    ): Call<MovieDetailApiResult>
 }

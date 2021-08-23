@@ -1,5 +1,6 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,7 +21,7 @@ import com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel.MovieViewModel
 import com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel.MovieViewModelFactory
 
 
-class MovieFragment : Fragment(){
+class MovieFragment : Fragment(), MovieAdapter.OnItemClickListener{
 
     companion object {
         fun newInstance() = MovieFragment()
@@ -61,17 +62,11 @@ class MovieFragment : Fragment(){
     }
 
     private fun loadMovieRecyclerView(movies: List<Movie?>) {
-        Log.e(TAG, "passou no loadRecycler${movies.toString()}")
-
         binding.rvMovies.layoutManager = LinearLayoutManager(
                 context,
         LinearLayoutManager.HORIZONTAL,
         false)
-        binding.rvMovies.adapter = movies?.let { MovieAdapter(movies) }
-        Log.d(
-            TAG,
-            "$movies.id"
-        )
+        binding.rvMovies.adapter = movies?.let { MovieAdapter(movies, this@MovieFragment) }
     }
 
     private fun loadGenreRecyclerView(genres:List<Genre?>?) {
@@ -82,11 +77,8 @@ class MovieFragment : Fragment(){
         binding.rvGenres.adapter = genres?.let { MovieGenreAdapter(genres) }
     }
 
-//    override fun onClick(idMovie: String?) {
-//        val intent = Intent(this.context, MovieDetailActivity::class.java)
-//        intent.putExtra("IDMOVIE", idMovie)
-//        startActivity(intent)
-//    }
-
-
+    override fun onClick(movie: Movie) {
+        val intent = Intent(this.context, MovieDetailActivity::class.java)
+        intent.putExtra("MOVIE_ID", movie.id.toString())
+        startActivity(intent)}
 }

@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toTopOf="@+id/tvPercent" />
 
             <TextView
-                android:id="@+id/tvPercent"
+                android:id="@+id/tvVoteAverage"
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:text="@string/value_not_found"

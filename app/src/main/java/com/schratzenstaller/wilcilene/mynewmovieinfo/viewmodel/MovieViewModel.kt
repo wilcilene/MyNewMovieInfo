@@ -11,7 +11,6 @@ class MovieViewModel : ViewModel() {
     var movies = MutableLiveData<List<Movie?>>()
 
     init {
-        Log.e("MovieViewModel", "Inicializando")
         Thread(Runnable {
             loadMovies()
         }).start()

@@ -1,5 +1,6 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.api
 
+import android.util.Log
 import com.schratzenstaller.wilcilene.mynewmovieinfo.api.model.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,7 +33,9 @@ object Repository {
     }
 
     fun getMovieDetail(idMovie: Int?): MovieDetailApiResult? {
-        val callMovieDetail = idMovie?.let { service.getMovieDetail(it?.toInt(), API_KEY) }
+        val callMovieDetail = idMovie?.let {
+            service.getMovieDetail(it, API_KEY)
+        }
 
         return callMovieDetail?.execute()?.body()
     }

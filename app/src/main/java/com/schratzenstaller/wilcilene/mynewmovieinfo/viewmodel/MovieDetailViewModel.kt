@@ -1,13 +1,15 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel
 
+
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.schratzenstaller.wilcilene.mynewmovieinfo.api.Repository
 import com.schratzenstaller.wilcilene.mynewmovieinfo.domain.*
 
-class MovieDetailViewModel : ViewModel() {
-    //var movies = MutableLiveData<List<MovieDetail?>>()
+class MovieDetailViewModel : ViewModel()  {
     var movieDetail = MutableLiveData<MovieDetail?>()
+//    var movieDetail = MutableLiveData<MovieDetail?>()
 
     init {
         Thread(Runnable {
@@ -17,7 +19,7 @@ class MovieDetailViewModel : ViewModel() {
 
     private fun loadMovies() {
         val movieDetailApiResult = Repository.getMovieDetail(451048)
-        //var movieDetail = mutableListOf<MovieDetail>()
+
         var genres = mutableListOf<Genre>()
         var credits = mutableListOf<Cast>()
 
@@ -30,7 +32,6 @@ class MovieDetailViewModel : ViewModel() {
         }
 
         movieDetailApiResult?.credits?.forEach {
-            //it.cast?.forEach{
             val newCast = Cast(
                 it.profile_path,
                 it.name,
@@ -40,18 +41,17 @@ class MovieDetailViewModel : ViewModel() {
         }
 
         val newMovieDetail = MovieDetail(
-            id = movieDetailApiResult?.id,
-            backdrop_path = movieDetailApiResult?.backdrop_path,
-            vote_average = movieDetailApiResult?.vote_average,
-            title = movieDetailApiResult?.title,
-            release_date = movieDetailApiResult?.release_date,
-            runtime = movieDetailApiResult?.runtime,
-            genres = genres,
-            overview = movieDetailApiResult?.overview,
-            credits = credits
+            movieDetailApiResult?.id,
+            movieDetailApiResult?.backdrop_path,
+            movieDetailApiResult?.vote_average,
+            movieDetailApiResult?.title,
+            movieDetailApiResult?.release_date,
+            movieDetailApiResult?.runtime,
+            genres,
+            movieDetailApiResult?.overview,
+            null
         )
 
-        //movieDetailList.add(newMovieDetail)
 
         movieDetail.postValue(newMovieDetail)
     }
