@@ -9,11 +9,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- line_1_color-->
     <color name="default_text_color">#000000</color>
     <color name="green_tab_indicator">#11C76F</color>
     <color name="background">#FFFFFFFF</color>
-    <!--<color name="background">#FFBB86FC</color>-->
     <color name="dark">#00000000</color>
     <color name="bg_genres_checked">#223324</color>
     <color name="bg_genres_unchecked">#C4C4C4</color>

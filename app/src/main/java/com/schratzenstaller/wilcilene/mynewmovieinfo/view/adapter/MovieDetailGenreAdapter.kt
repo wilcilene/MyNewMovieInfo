@@ -27,6 +27,7 @@ class MovieDetailGenreAdapter(
     inner class ViewHolder(private val itemBinding: ItemGenreBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bindView(item: Genre?) = with (itemBinding){
             if (item != null) {
+//                chipGenres.setChipBackgroundColor("#223344")
                 chipGenres.text = item.name
             }
         }

@@ -32,11 +32,11 @@ class MovieDetailCastAdapter(
 
             item?.let {
 
-                var photoCast = "https://image.tmdb.org/t/p/original" + item.profile_path
+                var urlPhotoCast = "https://image.tmdb.org/t/p/original" + item.profile_path
                 if (item.profile_path.isNullOrBlank()) {
-                    photoCast = "https://i.redd.it/ds1luav7dl851.jpg"
+                    urlPhotoCast = "https://i.redd.it/ds1luav7dl851.jpg"
                 }
-                Glide.with(itemView.context).load(photoCast).into(civCastPerson)
+                Glide.with(itemView.context).load(urlPhotoCast).into(civCastPerson)
 
                 tvNameCast.text = item.name
 

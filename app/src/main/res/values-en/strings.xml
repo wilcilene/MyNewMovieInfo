@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My New Movie Info</string>
+
+    <string name="search_movie">Search a movie…</string>
+    <string name="btn_search_movie">Search a movie</string>
+    <string name="favorites">Favorites</string>
+    <string name="all_movies">All Movies</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="value_not_found">Value not found</string>
+    <string name="star">Decorative Star</string>
+    <string name="user_rating">User rating</string>
+    <string name="back">Back</string>
+    <string name="overview">Overview</string>
+    <string name="title_cast">Cast</string>
+    <string name="release_year">Release year</string>
+    <string name="runtime">%1$sH:%2$smin</string>
+</resources>

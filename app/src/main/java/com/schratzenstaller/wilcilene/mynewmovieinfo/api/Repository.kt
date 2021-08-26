@@ -1,7 +1,8 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.api
 
-import android.util.Log
-import com.schratzenstaller.wilcilene.mynewmovieinfo.api.model.*
+import com.schratzenstaller.wilcilene.mynewmovieinfo.api.model.GenreListApiResult
+import com.schratzenstaller.wilcilene.mynewmovieinfo.api.model.MovieDetailApiResult
+import com.schratzenstaller.wilcilene.mynewmovieinfo.api.model.MovieListApiResult
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,22 +20,21 @@ object Repository {
     }
 
     fun getAllMovies(): MovieListApiResult? {
-        //ALTERNAR AS PAGINAS de 1 a 500total_pages
         var page = 1
         val callMovies = service.getAllMovies(API_KEY, page)
 
         return callMovies.execute().body()
     }
 
-    fun getAllGenres(): GenreListApiResult?{
+    fun getAllGenres(): GenreListApiResult? {
         val callGenres = service.getAllGenres(API_KEY)
 
         return callGenres.execute().body()
     }
 
-    fun getMovieDetail(idMovie: Int?): MovieDetailApiResult? {
+    fun getMovieDetail(idMovie: String?): MovieDetailApiResult? {
         val callMovieDetail = idMovie?.let {
-            service.getMovieDetail(it, API_KEY)
+            service.getMovieDetail(idMovie, API_KEY)
         }
 
         return callMovieDetail?.execute()?.body()

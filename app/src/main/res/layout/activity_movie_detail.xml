@@ -5,19 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MovieDetailActivity">
-    <!--    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--        xmlns:tools="http://schemas.android.com/tools"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:fillViewport="true"-->
-    <!--        android:orientation="vertical"-->
-    <!--        tools:context=".view.MovieDetailActivity">-->
-
-    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:background="@color/background">-->
 
     <ImageButton
         android:id="@+id/ibtBack"
@@ -31,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back" />
 
-    <!-- ALTERAR tamanho da img e arrumar scaleType-->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivMoviePoster"
         android:layout_width="match_parent"
@@ -39,7 +25,6 @@
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/movie_poster"
         android:scaleType="centerCrop"
-        android:src="@drawable/fight_club"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/shapeCornerBotton40" />
@@ -72,7 +57,7 @@
                 android:src="@drawable/ic_star_percent"
                 app:layout_constraintBottom_toBottomOf="@+id/tvMsgAvaliation"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvPercent" />
+                app:layout_constraintTop_toTopOf="@+id/tvVoteAverage" />
 
             <TextView
                 android:id="@+id/tvVoteAverage"
@@ -89,7 +74,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.5"
-                android:text="@string/user_avaliation"
+                android:text="@string/user_rating"
                 android:textAppearance="@style/textDefault"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -146,19 +131,12 @@
             android:text="@string/value_not_found" />
 
         <TextView
-            android:id="@+id/tvAge"
-            style="@style/textDefault"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@string/value_not_found" />
-
-        <TextView
             android:id="@+id/tvRuntime"
             style="@style/textDefault"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:layout_marginStart="16dp"
             android:text="@string/value_not_found" />
     </LinearLayout>
 
@@ -175,7 +153,7 @@
         android:id="@+id/tvOverviewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/overview"
         android:textAppearance="@style/textTitle2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
@@ -185,7 +163,7 @@
         android:id="@+id/tvOverviewText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:alpha="0.5"
         android:text="@string/value_not_found"
@@ -197,10 +175,10 @@
         android:id="@+id/tvCastTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/title_elenco"
+        android:layout_marginEnd="8dp"
+        android:text="@string/title_cast"
         android:textAppearance="@style/textTitle2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvOverviewTitle"
@@ -216,5 +194,4 @@
         app:layout_constraintStart_toStartOf="@+id/tvCastTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvCastTitle" />
 
-    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

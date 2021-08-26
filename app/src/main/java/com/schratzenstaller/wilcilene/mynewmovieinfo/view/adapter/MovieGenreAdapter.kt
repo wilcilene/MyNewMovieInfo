@@ -9,7 +9,6 @@ import com.schratzenstaller.wilcilene.mynewmovieinfo.domain.Genre
 class MovieGenreAdapter(private val items: List<Genre?>) : RecyclerView.Adapter<MovieGenreAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        //val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
         val viewBinding = ItemGenreBinding.inflate(LayoutInflater.from(parent.context),
             parent, false)
 

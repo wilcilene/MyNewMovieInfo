@@ -1,33 +1,24 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.schratzenstaller.wilcilene.mynewmovieinfo.R
-import com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel.FavoriteViewModel
+import com.schratzenstaller.wilcilene.mynewmovieinfo.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = FavoriteFragment()
-    }
-
-    private lateinit var viewModel: FavoriteViewModel
+    private var _binding: FragmentFavoriteBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_favorite, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
-        // TODO: Use the ViewModel
+    ): View {
+        _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 }

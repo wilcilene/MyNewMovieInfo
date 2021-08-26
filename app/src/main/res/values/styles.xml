@@ -53,6 +53,5 @@
     <style name="chipGenres" parent="Widget.MaterialComponents.Chip.Filter">
         <item name="chipBackgroundColor">@drawable/chip_genre_on_click</item>
         <item name="android:textAppearance">@style/textDefault</item>
-
     </style>
 </resources>

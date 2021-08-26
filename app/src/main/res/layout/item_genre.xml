@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:clickable="false"
@@ -9,25 +8,6 @@
     android:orientation="vertical"
     android:padding="8dp">
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tvGenres"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/shape_genres"-->
-    <!--        android:clickable="true"-->
-    <!--        style="@style/TextDefault"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--        <androidx.appcompat.widget.AppCompatButton-->
-    <!--            android:id="@+id/btnGenres"-->
-    <!--            style="@style/TextDefault"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:background="@drawable/shape_genres"-->
-    <!--            android:backgroundTint="@color/bg_gray_genres"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent" />-->
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipgroupGenres"
         android:layout_width="wrap_content"
@@ -35,8 +15,7 @@
         app:chipSpacingHorizontal="32dp"
         app:chipSpacingVertical="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:singleSelection="true">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipGenres"
@@ -48,10 +27,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </com.google.android.material.chip.ChipGroup>
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvNameGenre"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
 
 </LinearLayout>

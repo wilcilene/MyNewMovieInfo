@@ -1,6 +1,5 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.schratzenstaller.wilcilene.mynewmovieinfo.api.Repository
@@ -17,9 +16,9 @@ class GenreViewModel: ViewModel() {
 
     private fun loadGenres() {
         val genreListApiResult = Repository.getAllGenres()
-        var genreList = mutableListOf<Genre>()
+        val genreList = mutableListOf<Genre>()
 
-        var list = genreListApiResult?.genres
+        val list = genreListApiResult?.genres
 
         list?.forEach {
             val newGenre = Genre(

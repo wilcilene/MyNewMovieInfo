@@ -2,10 +2,6 @@ package com.schratzenstaller.wilcilene.mynewmovieinfo.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayoutMediator
 import com.schratzenstaller.wilcilene.mynewmovieinfo.R
 import com.schratzenstaller.wilcilene.mynewmovieinfo.databinding.ActivityMovieHomeBinding

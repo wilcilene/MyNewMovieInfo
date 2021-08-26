@@ -1,15 +1,13 @@
 package com.schratzenstaller.wilcilene.mynewmovieinfo.viewmodel
 
-
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.schratzenstaller.wilcilene.mynewmovieinfo.api.Repository
 import com.schratzenstaller.wilcilene.mynewmovieinfo.domain.*
 
-class MovieDetailViewModel : ViewModel()  {
+class MovieDetailViewModel(idMovie: String) : ViewModel()  {
     var movieDetail = MutableLiveData<MovieDetail?>()
-//    var movieDetail = MutableLiveData<MovieDetail?>()
+    var idMovieDetail = idMovie
 
     init {
         Thread(Runnable {
@@ -18,10 +16,10 @@ class MovieDetailViewModel : ViewModel()  {
     }
 
     private fun loadMovies() {
-        val movieDetailApiResult = Repository.getMovieDetail(451048)
+        val movieDetailApiResult = Repository.getMovieDetail(idMovieDetail)
 
-        var genres = mutableListOf<Genre>()
-        var credits = mutableListOf<Cast>()
+        val genres = mutableListOf<Genre>()
+        val credits = mutableListOf<Cast>()
 
         movieDetailApiResult?.genres?.forEach {
             val newGenres = Genre(
@@ -40,8 +38,6 @@ class MovieDetailViewModel : ViewModel()  {
             credits.add(newCast)
         }
 
-        Log.e("MovieDetailViewModel", credits[0].name.toString())
-
         val newMovieDetail = MovieDetail(
             movieDetailApiResult?.id,
             movieDetailApiResult?.backdrop_path,
@@ -53,7 +49,6 @@ class MovieDetailViewModel : ViewModel()  {
             movieDetailApiResult?.overview,
             credits
         )
-
         movieDetail.postValue(newMovieDetail)
     }
 }
