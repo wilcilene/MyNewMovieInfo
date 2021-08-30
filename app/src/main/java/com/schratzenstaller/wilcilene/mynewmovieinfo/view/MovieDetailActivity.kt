@@ -2,7 +2,6 @@ package com.schratzenstaller.wilcilene.mynewmovieinfo.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -28,7 +27,7 @@ class MovieDetailActivity : AppCompatActivity() {
             ViewModelProvider(this, MovieDetailViewModelFactory(movieId.toString()))
                 .get(MovieDetailViewModel::class.java)
 
-        detailViewModel.movieDetail.observe(this, Observer {
+        detailViewModel.movieDetail.observe(this, {
             setupMovieDetail(it)
             setupRecyclerViewGenre(it)
             setupRecyclerViewCast(it)
@@ -58,6 +57,7 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerViewGenre(it: MovieDetail?) {
+
         binding.rvMovieGenres.layoutManager = LinearLayoutManager(
             this,
             LinearLayoutManager.HORIZONTAL,

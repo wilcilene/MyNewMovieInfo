@@ -23,7 +23,6 @@ class MovieViewModel : ViewModel() {
         val list = movieListApiResult?.results
 
         list?.forEach {
-            //Log.d("MovieViewModel", it.toString())
             val newMovie = Movie(
                 it.id,
                 it.poster_path,

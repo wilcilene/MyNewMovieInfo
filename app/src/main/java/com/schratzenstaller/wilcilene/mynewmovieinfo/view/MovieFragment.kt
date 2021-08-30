@@ -55,7 +55,7 @@ class MovieFragment : Fragment(), MovieAdapter.OnItemClickListener {
             LinearLayoutManager.HORIZONTAL,
             false)
 
-        binding.rvMovies.adapter = movies?.let {MovieAdapter(movies, this@MovieFragment)}
+        binding.rvMovies.adapter = movies.let {MovieAdapter(movies, this@MovieFragment)}
     }
 
     private fun setupGenreRecyclerView(genres: List<Genre?>?) {

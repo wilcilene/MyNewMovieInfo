@@ -42,7 +42,6 @@
             android:id="@+id/relativeLayout"
             style="@style/shapeCornerLeft100"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:background="@drawable/radius_left_100"
             android:backgroundTint="@color/background"
@@ -135,8 +134,8 @@
             style="@style/textDefault"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
             android:layout_marginStart="16dp"
+            android:padding="8dp"
             android:text="@string/value_not_found" />
     </LinearLayout>
 
@@ -147,7 +146,8 @@
         android:orientation="horizontal"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
+        tools:listitem="@layout/item_genre" />
 
     <TextView
         android:id="@+id/tvOverviewTitle"
@@ -192,6 +192,7 @@
         android:orientation="horizontal"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintStart_toStartOf="@+id/tvCastTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvCastTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCastTitle"
+        tools:listitem="@layout/item_cast" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

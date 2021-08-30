@@ -7,7 +7,7 @@ data class MovieDetail(
     val backdrop_path: String?,
     private val vote_average: Float?,
     val title: String?,
-    val release_date: String?,
+    private val release_date: String?,
     private val runtime: Int?,
     val genres: List<Genre>?,
     val overview: String?,
